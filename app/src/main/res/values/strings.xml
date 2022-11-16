@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Drogue_Plus</string>
+    <string name="txt_welcome">Bienvenido!</string>
+    <string name="txt_description">Obten tus medicamentos facilmente estes donde estes</string>
+    <string name="logo">logo</string>
+    <string name="btn_departamento">Departamento</string>
+    <string name="btn_ciudad">Ciudad</string>
 </resources>
