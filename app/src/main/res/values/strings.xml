@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Drogue_Plus</string>
+    <string name="msg_bienvenida">¡Bienvenido!</string>
+    <string name="msg_bienvenida_2">Obten tus medicamentos facilmente donde estés</string>
 </resources>
