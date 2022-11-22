@@ -3,32 +3,75 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:background="#012E4A"
+    android:gravity="center"
     android:orientation="vertical"
+    android:textAlignment="center"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="match_parent"
+        android:layout_width="335dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="24dp"
+        android:contentDescription="@string/app_name"
         app:srcCompat="@drawable/drogue_" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="24dp"
         android:text="@string/msg_bienvenida"
         android:textAlignment="center"
-        android:textColor="@color/app_white" />
+        android:textColor="@color/app_white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:foregroundGravity="center_vertical"
+        android:gravity="center"
         android:text="@string/msg_bienvenida_2"
         android:textAlignment="center"
-        android:textColor="@color/app_white" />
+        android:textColor="@color/app_white"
+        android:textSize="20sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/ic_location_on_24">
+
+        <AutoCompleteTextView
+            android:id="@+id/dropdownmenu"
+            android:layout_width="332dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:foregroundGravity="center"
+            android:hint="Departamento"
+            android:inputType="none"
+            android:textColorHint="#616161" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnGoLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="71dp"
+        android:layout_gravity="end"
+        android:layout_margin="24dp"
+        android:drawableRight="@drawable/ic_navigate_next_24"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:hint="@string/msg_bienvenida"
+        android:text="Siguiente"
+        android:textAlignment="center" />
 
 </LinearLayout>
