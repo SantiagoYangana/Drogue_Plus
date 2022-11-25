@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
 
     private lateinit var bindingDep: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        Thread.sleep(2000)
         super.onCreate(savedInstanceState)
         bindingDep = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingDep.root)

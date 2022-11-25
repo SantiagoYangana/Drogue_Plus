@@ -42,4 +42,21 @@
     <string name="correo_hint">Correo Electrónico</string>
     <string name="contra_hint">Contraseña</string>
     <string name="olvido_contra">¿Olvidaste tu contraseña?</string>
+    <string name="btn_login_lbl">Ingresar</string>
+    <string name="btn_register_lbl">Crear cuenta</string>
+    <string name="btn_no_cuenta">¿No tienes cuenta?</string>
+    <string name="btn_no_cuenta_2">Registrate Aquí</string>
+    <string name="login_lbl">Inicio de Sesión</string>
+    <string name="registro_lbl">Registro Usuario</string>
+    <string name="email_error">Correo electrónico no válido</string>
+    <string name="password_error">Contraseña invalida</string>
+    <string name="register_lbl1">Ya tengo una cuenta</string>
+    <string name="register_lbl2">Iniciar sesión</string>
+    <string name="name_hint">Nombre</string>
+    <string name="last_name_hint">Apellido</string>
+    <string name="fechanac_hint">Fecha de nacimiento</string>
+    <string name="c_password_hint">Confirmar Contraseña</string>
+    <string name="forgot_lbl">Recordar contraseña</string>
+    <string name="btn_forgot_lbl">Cambiar contraseña</string>
+
 </resources>
