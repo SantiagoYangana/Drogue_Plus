@@ -1,3 +1,67 @@
 <resources>
-    <string name="app_name">Drogue_Plus</string>
+    <string name="app_name">Drogue Plus</string>
+    <string name="msg_bienvenida">¡Bienvenido!</string>
+    <string name="msg_bienvenida_2">Obten tus medicamentos facilmente donde estés</string>
+    <string-array name="departamento_menu">
+        <item>Amazonas</item>
+        <item>Antioquia</item>
+        <item>Arauca</item>
+        <item>Atlántico</item>
+        <item>Bogotá</item>
+        <item>Bolívar</item>
+        <item>Boyacá</item>
+        <item>Caldas</item>
+        <item>Caquetá</item>
+        <item>Casanare</item>
+        <item>Cauca</item>
+        <item>Cesar</item>
+        <item>Chocó</item>
+        <item>Córdoba</item>
+        <item>Cundinamarca</item>
+        <item>Guainía</item>
+        <item>Huila</item>
+        <item>Guaviare</item>
+        <item>La Guajira</item>
+        <item>Magdalena</item>
+        <item>Meta</item>
+        <item>Nariño</item>
+        <item>Norte de Santander</item>
+        <item>Putumayo</item>
+        <item>Quindío</item>
+        <item>Risaralda</item>
+        <item>San Andrés y Providencia</item>
+        <item>Santander</item>
+        <item>Sucre</item>
+        <item>Tolima</item>
+        <item>Valle del Cauca</item>
+        <item>Vaupés</item>
+        <item>Vichada</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="correo_hint">Correo Electrónico</string>
+    <string name="contra_hint">Contraseña</string>
+    <string name="olvido_contra">¿Olvidaste tu contraseña?</string>
+    <string name="btn_login_lbl">Ingresar</string>
+    <string name="btn_register_lbl">Crear cuenta</string>
+    <string name="btn_no_cuenta">¿No tienes cuenta?</string>
+    <string name="btn_no_cuenta_2">Registrate Aquí</string>
+    <string name="login_lbl">Inicio de Sesión</string>
+    <string name="registro_lbl">Registro Usuario</string>
+    <string name="email_error">Correo electrónico no válido</string>
+    <string name="password_error">Contraseña invalida</string>
+    <string name="register_lbl1">Ya tengo una cuenta</string>
+    <string name="register_lbl2">Iniciar sesión</string>
+    <string name="name_hint">Nombre</string>
+    <string name="last_name_hint">Apellido</string>
+    <string name="fechanac_hint">Fecha de nacimiento</string>
+    <string name="c_password_hint">Confirmar Contraseña</string>
+    <string name="forgot_lbl">Recordar contraseña</string>
+    <string name="btn_forgot_lbl">Cambiar contraseña</string>
+    <string name="home_lbl">Home</string>
+    <string name="location_lbl">Localización</string>
+    <string name="profile_lbl">Mi perfil</string>
+    <string name="medication_lbl">Medicamentos</string>
+
+
 </resources>
