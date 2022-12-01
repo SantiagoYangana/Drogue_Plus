@@ -1,81 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:background="#012E4A"
-    tools:context=".MainActivity">
+    android:gravity="center"
+    android:orientation="vertical"
+    android:textAlignment="center"
+    tools:context=".ui.activities.MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+        android:id="@+id/imageView2"
+        android:layout_width="335dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.146"
-        app:srcCompat="@drawable/drogue_"
-        android:contentDescription="@string/logo" />
+        android:layout_gravity="bottom|center"
+        android:layout_margin="24dp"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/drogue_" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/txt_welcome"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.2" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="254dp"
-        android:layout_height="44dp"
-        android:text="@string/txt_description"
+        android:layout_margin="24dp"
+        android:text="@string/msg_bienvenida"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.105" />
+        android:textColor="@color/app_white"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:foregroundGravity="center_vertical"
+        android:gravity="center"
+        android:text="@string/msg_bienvenida_2"
+        android:textAlignment="center"
+        android:textColor="@color/app_white"
+        android:textSize="20sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/ic_location_on_24">
+
+        <AutoCompleteTextView
+            android:id="@+id/dropdownmenu"
+            android:layout_width="332dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:foregroundGravity="center"
+            android:hint="Departamento"
+            android:inputType="none"
+            android:textColorHint="#616161" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="227dp"
-        android:layout_height="55dp"
-        android:background="@color/white_light"
-        android:text="@string/btn_departamento"
-        android:textColor="#036380"
-        app:icon="@android:drawable/ic_search_category_default"
-        app:iconTint="#036380"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.192" />
+        android:id="@+id/btnGoLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="71dp"
+        android:layout_gravity="end"
+        android:layout_margin="24dp"
+        android:drawableRight="@drawable/ic_navigate_next_24"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:hint="@string/msg_bienvenida"
+        android:text="Siguiente"
+        android:textAlignment="center"
+        android:textSize="@dimen/btn_text_size" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="161dp"
-        android:layout_height="56dp"
-        android:background="@color/white_light"
-        android:text="@string/btn_ciudad"
-        android:textColor="#036380"
-        app:icon="@android:drawable/ic_search_category_default"
-        app:iconTint="#036380"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.525" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
