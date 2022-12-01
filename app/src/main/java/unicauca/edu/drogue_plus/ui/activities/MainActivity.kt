@@ -1,4 +1,4 @@
-package unicauca.edu.drogue_plus
+package unicauca.edu.drogue_plus.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Toast
+import unicauca.edu.drogue_plus.R
 import unicauca.edu.drogue_plus.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         Toast.makeText(this@MainActivity,item,Toast.LENGTH_SHORT).show()
 
         val btnGoLogin : Button = findViewById(R.id.btnGoLogin)
-        val miIntent = Intent(this,LoginActivity::class.java)
+        val miIntent = Intent(this, LoginActivity::class.java)
 
         val miBundle = Bundle()
 

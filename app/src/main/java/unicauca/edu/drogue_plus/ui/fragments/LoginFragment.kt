@@ -1,4 +1,4 @@
-package unicauca.edu.drogue_plus
+package unicauca.edu.drogue_plus.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import unicauca.edu.drogue_plus.R
 import unicauca.edu.drogue_plus.databinding.FragmentLoginBinding
+import unicauca.edu.drogue_plus.isValidEmail
+import unicauca.edu.drogue_plus.isValidPassword
+import unicauca.edu.drogue_plus.ui.activities.HomeActivity
 
 class LoginFragment : Fragment() {
 
@@ -40,7 +44,7 @@ class LoginFragment : Fragment() {
             }
 
             if(binding.loginEmail.text.toString().isValidEmail() && binding.loginPassword.text.toString().isValidPassword()){
-                val intent = Intent(requireContext(),HomeActivity::class.java )
+                val intent = Intent(requireContext(), HomeActivity::class.java )
                 startActivity(intent)
                 requireActivity().finish()
             }

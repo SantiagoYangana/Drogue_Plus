@@ -1,4 +1,4 @@
-package unicauca.edu.drogue_plus
+package unicauca.edu.drogue_plus.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
