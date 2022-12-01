@@ -58,5 +58,10 @@
     <string name="c_password_hint">Confirmar Contraseña</string>
     <string name="forgot_lbl">Recordar contraseña</string>
     <string name="btn_forgot_lbl">Cambiar contraseña</string>
+    <string name="home_lbl">Home</string>
+    <string name="location_lbl">Localización</string>
+    <string name="profile_lbl">Mi perfil</string>
+    <string name="medication_lbl">Medicamentos</string>
+
 
 </resources>
