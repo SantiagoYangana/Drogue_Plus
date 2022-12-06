@@ -62,7 +62,17 @@
     <string name="location_lbl">Localización</string>
     <string name="profile_lbl">Mi perfil</string>
     <string name="medication_lbl">Medicamentos</string>
-    <string name="home_fragment_tittle">En esta sección encontrará los medicamento suministrados de los cuales podrá disponer, según su disponibilidad</string>
+    <string name="home_fragment_tittle">En esta sección encontrará los medicamentos disponibles</string>
+    <string name="Text_Btn_Salir">Salir</string>
+
+    <!--MEDICAMENTOS-->
+
+    <string-array name="medicamentos">
+        <item>Acetaminofén</item>
+        <item>Dolex</item>
+        <item>Aspirina</item>
+
+    </string-array>
 
 
 </resources>
