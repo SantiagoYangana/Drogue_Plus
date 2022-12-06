@@ -53,4 +53,5 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
             startActivity(miIntent)
         }
     }
+
 }
