@@ -20,11 +20,14 @@
         <item name="android:forceDarkAllowed">false</item>
     </style>
 
+
     <style name="ShapeAppearance.Droge.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/corner_size_sm</item>
     </style>
+    <style name="Tittle" parent="TextAppearance.MaterialComponents.Headline5">
 
+    </style>
     <style name="ShapeAppearance.Droge.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/corner_size_md</item>
