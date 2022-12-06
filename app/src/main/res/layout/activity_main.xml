@@ -56,7 +56,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:foregroundGravity="center"
-            android:hint="Pista"
+            android:hint="Departamento"
             android:inputType="none"
             android:textColorHint="#616161" />
     </com.google.android.material.textfield.TextInputLayout>
