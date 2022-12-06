@@ -13,21 +13,13 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import unicauca.edu.drogue_plus.R
-import unicauca.edu.drogue_plus.databinding.FragmentForgotBinding
-
-class LocationFragment : Fragment(), OnMapReadyCallback {
-
-    private var _binding: FragmentForgotBinding?=null
-    private val binding : FragmentForgotBinding get() = _binding!!
-    private lateinit var nMap:GoogleMap
-import unicauca.edu.drogue_plus.R
 import unicauca.edu.drogue_plus.databinding.FragmentHomeBinding
 import unicauca.edu.drogue_plus.databinding.FragmentLocationBinding
 
 
 class LocationFragment : Fragment(), OnMapReadyCallback {
 
-    private lateinit var nMap: GoogleMap
+    private lateinit var nMap:GoogleMap
     private var _binding: FragmentLocationBinding? = null
     private val binding : FragmentLocationBinding get() = _binding!!
 
@@ -36,11 +28,6 @@ class LocationFragment : Fragment(), OnMapReadyCallback {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentLocationBinding.inflate(inflater,container,false)
-        return binding.root
-    }
-
-        // Inflate the layout for this fragment
-        _binding = FragmentForgotBinding.inflate(inflater,container,false)
         return binding.root
     }
 
@@ -64,6 +51,4 @@ class LocationFragment : Fragment(), OnMapReadyCallback {
             .title("DroguePlus"))
         nMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lating,12.0f))
     }
-
-
 }
