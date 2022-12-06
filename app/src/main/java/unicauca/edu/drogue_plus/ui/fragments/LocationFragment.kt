@@ -25,8 +25,9 @@ import unicauca.edu.drogue_plus.databinding.FragmentHomeBinding
 import unicauca.edu.drogue_plus.databinding.FragmentLocationBinding
 
 
-class LocationFragment : Fragment() {
+class LocationFragment : Fragment(), OnMapReadyCallback {
 
+    private lateinit var nMap: GoogleMap
     private var _binding: FragmentLocationBinding? = null
     private val binding : FragmentLocationBinding get() = _binding!!
 
