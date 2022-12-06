@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="unicauca.edu.drogue_plus.ui.fragments.HomeFragment"
+        android:label="@string/home_lbl"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/medicationFragment"
+        android:name="unicauca.edu.drogue_plus.ui.fragments.MedicationFragment"
+        android:label="@string/medication_lbl"
+        tools:layout="@layout/fragment_medication" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="unicauca.edu.drogue_plus.ui.fragments.ProfileFragment"
+        android:label="@string/profile_lbl"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="unicauca.edu.drogue_plus.ui.fragments.LocationFragment"
+        android:label="@string/location_lbl"
+        tools:layout="@layout/fragment_location" />
+</navigation>

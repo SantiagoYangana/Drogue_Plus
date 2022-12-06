@@ -20,11 +20,24 @@ class LocationFragment : Fragment(), OnMapReadyCallback {
     private var _binding: FragmentForgotBinding?=null
     private val binding : FragmentForgotBinding get() = _binding!!
     private lateinit var nMap:GoogleMap
+import unicauca.edu.drogue_plus.R
+import unicauca.edu.drogue_plus.databinding.FragmentHomeBinding
+import unicauca.edu.drogue_plus.databinding.FragmentLocationBinding
+
+
+class LocationFragment : Fragment() {
+
+    private var _binding: FragmentLocationBinding? = null
+    private val binding : FragmentLocationBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        _binding = FragmentLocationBinding.inflate(inflater,container,false)
+        return binding.root
+    }
+
         // Inflate the layout for this fragment
         _binding = FragmentForgotBinding.inflate(inflater,container,false)
         return binding.root
