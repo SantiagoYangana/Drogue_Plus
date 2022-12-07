@@ -69,6 +69,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:padding="@dimen/small_margin"
+        tools:listitem="@layout/medicamento_0"
+        android:paddingHorizontal="@dimen/small_margin"
+
     />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.Drogue_Plus" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryVariant </item>
@@ -13,6 +14,7 @@
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Droge.SmallComponent</item>
         <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Droge.MediumComponent</item>
         <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Droge.LargeComponent</item>
+
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
@@ -25,9 +27,15 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/corner_size_sm</item>
     </style>
-    <style name="Tittle" parent="TextAppearance.MaterialComponents.Headline5">
 
+    <style name="listamedicamento" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:textColor">@color/app_white</item>
     </style>
+
+    <style name="Tittle" parent="TextAppearance.MaterialComponents.Headline5"></style>
+
     <style name="ShapeAppearance.Droge.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/corner_size_md</item>
@@ -37,4 +45,5 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">@dimen/corner_size_lg</item>
     </style>
+
 </resources>
