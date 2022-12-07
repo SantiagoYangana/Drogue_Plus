@@ -56,26 +56,7 @@ class ProfileFragment : Fragment() {
 
     }
 
-    private fun observeViewModels() {
-        loginViewModel.logOut.observe(viewLifecycleOwner, Observer {
-            if (it) {
-                val intent = Intent(requireContext(), LoginActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(intent)
-                requireActivity().finish()
-            }
-        })
 
-        loginViewModel.user.observe(viewLifecycleOwner, Observer {
-            binding.profileFragmentName.text = it.nombre
-            binding.profileFragmentEmail.text = it.email
-            binding.profileFragmentGender.text = it.genero
-            if (it.image != null) {
-                Glide.with(binding.root).load(it.image).centerCrop()
-                    .into(binding.profileFragmentImage)
-            }
-        })
-    }
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -98,11 +79,29 @@ class ProfileFragment : Fragment() {
                 // val extras = data!!.extras!!
                 val extras = data.extras!!
                 val image = extras["data"] as Bitmap?
-
                 binding.profileFragmentImage.setImageBitmap(image)
             }
 
         }
+    }
+
+    private fun observeViewModels() {
+        loginViewModel.user.observe(viewLifecycleOwner, Observer {
+            if (it != null) {
+                binding.profileFragmentName.text = it.nombre
+                binding.profileFragmentEmail.text = it.email
+                binding.profileFragmentGender.text = it.genero
+                if (it.image != null) {
+                    Glide.with(binding.root).load(it.image).centerCrop()
+                        .into(binding.profileFragmentImage)
+                }
+            }else{
+                val intent = Intent(requireContext(), LoginActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                requireActivity().finish()
+            }
+        })
     }
 
     private fun openCamera() {
