@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.ProfileFragment"
-    android:background="@color/colorPrimaryVariant">
+    android:background="@color/colorPrimaryVariant"
+    tools:context=".ui.fragments.ProfileFragment">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/profile_fragment_image"
@@ -18,9 +18,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/cutImage"
         app:srcCompat="@drawable/img10"
-        app:strokeWidth="@dimen/stroke"
         app:strokeColor="@color/app_white"
-        />
+        app:strokeWidth="@dimen/stroke" />
+
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/profile_fragment_name"
@@ -29,6 +29,7 @@
         android:layout_marginTop="@dimen/default_margin"
         android:textAppearance="@style/Text.Droge"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_fragment_image" />
 
@@ -36,12 +37,21 @@
         android:id="@+id/profile_fragment_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/profile_fragment_name"
+        android:textAppearance="@style/Text.Droge"
+        android:layout_marginTop="@dimen/default_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_fragment_name" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/profile_fragment_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/default_margin"
         android:textAppearance="@style/Text.Droge"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_fragment_email" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/profile_fragment_logout"

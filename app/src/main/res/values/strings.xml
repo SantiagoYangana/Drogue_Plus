@@ -62,6 +62,8 @@
     <string name="location_lbl">Localización</string>
     <string name="profile_lbl">Mi perfil</string>
     <string name="medication_lbl">Medicamentos</string>
+    <string name="login_error">Credenciales Invalidas</string>
+
 
 
 </resources>
