@@ -4,23 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    
+
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/medicamento_0_icon"
-        android:layout_width="@dimen/medicamento_0_size"
-        android:layout_height="@dimen/medicamento_0_size"
+        android:layout_width="@dimen/service_icon_size"
+        android:layout_height="@dimen/service_icon_size"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="@dimen/small_margin"
-        android:layout_marginStart="@dimen/big_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginStart="@dimen/default_margin"
         tools:srcCompat="@drawable/ic_baseline_medication_24" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/item_medicine_tittle"
         style="@style/listamedicamento"
-        android:layout_width="253dp"
-        android:layout_height="31dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/default_margin"
         android:textColor="#A1887F"
         android:textSize="@dimen/service_tittle_size"
@@ -36,7 +36,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/item_medicine_tittle"
+        app:layout_constraintStart_toEndOf="@id/medicamento_0_icon"
         app:layout_constraintTop_toBottomOf="@+id/item_medicine_tittle"
         tools:text="El medicamento no tiene orden de apoyo vigente" />
 
@@ -45,8 +45,8 @@
         android:layout_height="1dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="@dimen/small_margin"
-        app:layout_constraintTop_toBottomOf="@+id/medicamento_0_icon"
+        android:layout_marginTop="@dimen/default_margin"
+        app:layout_constraintTop_toBottomOf="@id/medicamento_0_icon"
         android:background="@color/app_white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
