@@ -17,28 +17,30 @@
         tools:srcCompat="@drawable/ic_baseline_medication_24" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/item_medicine_tittle"
+        android:id="@+id/medicamento_0_tittle"
         style="@style/listamedicamento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/default_margin"
-        android:textColor="#A1887F"
+        android:textColor="@color/app_white"
         android:textSize="@dimen/service_tittle_size"
         app:layout_constraintStart_toEndOf="@+id/medicamento_0_icon"
         app:layout_constraintTop_toTopOf="@+id/medicamento_0_icon"
         tools:text="Acetaminofén" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/State"
+        android:id="@+id/medicamento_0_state"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/default_margin"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        android:textColor="@color/app_white"
         app:layout_constraintStart_toEndOf="@id/medicamento_0_icon"
-        app:layout_constraintTop_toBottomOf="@+id/item_medicine_tittle"
+        app:layout_constraintTop_toBottomOf="@+id/medicamento_0_tittle"
         tools:text="El medicamento no tiene orden de apoyo vigente" />
+
 
     <View
         android:layout_width="0dp"

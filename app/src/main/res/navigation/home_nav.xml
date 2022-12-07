@@ -14,7 +14,20 @@
         android:id="@+id/medicationFragment"
         android:name="unicauca.edu.drogue_plus.ui.fragments.MedicationFragment"
         android:label="@string/medication_lbl"
-        tools:layout="@layout/fragment_medication" />
+        tools:layout="@layout/fragment_medication" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="Null" />
+        <argument
+            android:name="description"
+            app:argType="string"
+            android:defaultValue="Null" />
+        <argument
+            android:name="Search"
+            app:argType="boolean"
+            android:defaultValue="true" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="unicauca.edu.drogue_plus.ui.fragments.ProfileFragment"
