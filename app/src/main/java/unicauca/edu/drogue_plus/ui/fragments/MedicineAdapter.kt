@@ -10,7 +10,7 @@ class MedicineAdapter (var list: List<MedicineModel>):
 
     class ViewHolder(val view: Medicamento0Binding): RecyclerView.ViewHolder(view.root)
 
-    private var listener: OnMedicineClickListener? = null
+    var listener: OnMedicineClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -31,6 +31,11 @@ class MedicineAdapter (var list: List<MedicineModel>):
 
     override fun getItemCount(): Int {
         return list.size
+    }
+    fun changeDataSet(newList: List<MedicineModel>){
+        this.list = newList
+        notifyDataSetChanged()
+
     }
 
 
