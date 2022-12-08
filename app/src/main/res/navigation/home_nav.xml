@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="unicauca.edu.drogue_plus.ui.fragments.HomeFragment"
         android:label="@string/home_lbl"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/actionHomeFragmentToMedicineFragment22"
+            app:destination="@id/medicationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/medicationFragment"
         android:name="unicauca.edu.drogue_plus.ui.fragments.MedicationFragment"
@@ -27,6 +31,9 @@
             android:name="Search"
             app:argType="boolean"
             android:defaultValue="true" />
+        <action
+            android:id="@+id/action_medicationFragment_self"
+            app:destination="@id/medicationFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
