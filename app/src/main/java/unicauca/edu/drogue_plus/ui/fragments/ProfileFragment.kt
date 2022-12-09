@@ -79,7 +79,9 @@ class ProfileFragment : Fragment() {
                 // val extras = data!!.extras!!
                 val extras = data.extras!!
                 val image = extras["data"] as Bitmap?
-                binding.profileFragmentImage.setImageBitmap(image)
+                if(image != null){
+                    loginViewModel.uploadImage(image)
+                }
             }
 
         }

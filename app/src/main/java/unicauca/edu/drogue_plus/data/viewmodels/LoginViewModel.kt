@@ -1,5 +1,6 @@
 package unicauca.edu.drogue_plus.data.viewmodels
 
+import android.graphics.Bitmap
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -52,6 +53,12 @@ class LoginViewModel(private val repo: LoginRepository) : ViewModel() {
     fun currentUser(){
         viewModelScope.launch{
             _user.postValue(repo.getCurrentUser())
+        }
+    }
+
+    fun uploadImage(image: Bitmap){
+        viewModelScope.launch {
+            _user.postValue(repo.uploadImage(image))
         }
     }
 }
