@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "158963422755",
+    "project_id": "drogeplus",
+    "storage_bucket": "drogeplus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158963422755:android:9e7072630f313c7fc84396",
+        "android_client_info": {
+          "package_name": "unicauca.edu.drogue_plus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "158963422755-mnae0cat7f8pqeabkr97av77torp9jtv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFqcmPJGDucIS9pW41zoV0v0WFHwNLjXo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "158963422755-mnae0cat7f8pqeabkr97av77torp9jtv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

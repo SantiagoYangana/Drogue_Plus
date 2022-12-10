@@ -65,4 +65,8 @@
     <string name="home_fragment_tittle">En esta sección encontrará los medicamentos disponibles</string>
     <string name="Text_Btn_Salir">Salir</string>
     <string name="medicamento_hint">Buscar</string>
+    <string name="login_error">Credenciales Invalidas</string>
+
+
+
 </resources>

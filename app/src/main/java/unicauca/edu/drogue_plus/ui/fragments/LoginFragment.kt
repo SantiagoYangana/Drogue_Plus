@@ -6,8 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import unicauca.edu.drogue_plus.R
+import unicauca.edu.drogue_plus.data.viewmodels.LoginViewModel
 import unicauca.edu.drogue_plus.databinding.FragmentLoginBinding
 import unicauca.edu.drogue_plus.isValidEmail
 import unicauca.edu.drogue_plus.isValidPassword
@@ -18,6 +22,7 @@ class LoginFragment : Fragment() {
     private var _binding : FragmentLoginBinding? = null
     private val binding: FragmentLoginBinding get() = _binding!!
 
+    private val loginViewModel: LoginViewModel by viewModel()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,9 +49,8 @@ class LoginFragment : Fragment() {
             }
 
             if(binding.loginEmail.text.toString().isValidEmail() && binding.loginPassword.text.toString().isValidPassword()){
-                val intent = Intent(requireContext(), HomeActivity::class.java )
-                startActivity(intent)
-                requireActivity().finish()
+                loginViewModel.login(binding.loginEmail.text.toString(),binding.loginPassword.text.toString())
+
             }
         }
 
@@ -57,6 +61,20 @@ class LoginFragment : Fragment() {
         binding.loginForgotButton.setOnClickListener(){
             findNavController().navigate(R.id.action_loginFragment_to_forgotFragment)
         }
+
+        observerViewModel()
     }
 
+    private fun observerViewModel(){
+        loginViewModel.login.observe(this, Observer{
+            if(it){
+                val intent = Intent(requireContext(), HomeActivity::class.java )
+                startActivity(intent)
+                requireActivity().finish()
+            }else{
+                Snackbar.make(binding.root,getString(R.string.login_error),Snackbar.LENGTH_LONG).show()
+            }
+
+        })
+    }
 }

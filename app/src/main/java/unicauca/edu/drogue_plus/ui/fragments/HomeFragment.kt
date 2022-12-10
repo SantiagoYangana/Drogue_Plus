@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import unicauca.edu.drogue_plus.R
+import unicauca.edu.drogue_plus.data.viewmodels.LoginViewModel
 import unicauca.edu.drogue_plus.databinding.FragmentHomeBinding
 import unicauca.edu.drogue_plus.databinding.FragmentMedicationBinding
 
@@ -19,6 +22,8 @@ class HomeFragment : Fragment() {
     private val binding: FragmentHomeBinding get() = _binding!!
     private lateinit var serviceAdapter: MedicineAdapter
 
+
+    private val loginViewModel: LoginViewModel by sharedViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,5 +40,11 @@ class HomeFragment : Fragment() {
         )
     }
 
+/*
+override fun onStart(){
+        super.onStart()
+        loginViewModel.currentUser()
+    }
+*/
 
 }
