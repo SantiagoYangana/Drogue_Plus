@@ -16,11 +16,10 @@ import unicauca.edu.drogue_plus.databinding.FragmentProfileBinding
 class MedicationFragment : Fragment() {
     private var _binding: FragmentMedicationBinding? = null
     private val binding : FragmentMedicationBinding get() = _binding!!
-    private val args:MedicationFragmentArgs by navArgs()
-    private lateinit var MedicineAdapter: MedicineAdapter
-    private lateinit var MedicineList: List<MedicineModel>
-    private lateinit var  originalList: List<MedicineModel>
-    lateinit var categories: List<String>
+    private lateinit var medicineAdapter:MedicineAdapter
+    private lateinit var categories : List<String>
+    private lateinit var MedicineList :List<MedicineModel>
+    private lateinit var OriginalMedicineList :List<MedicineModel>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,54 +34,44 @@ class MedicationFragment : Fragment() {
         categories = listOf(
             "Todos", "Acetaminofen","Aspirina", "Loratadina","Ranitidina","Dolex"
         )
-        originalList = listOf(
-            MedicineModel(name = "Acetaminofen", R.drawable.ic_baseline_medication_24.toString(), state = true),
-            MedicineModel(name = "Aspirina", R.drawable.ic_baseline_medication_24.toString(), state = true),
-            MedicineModel(name = "Loratadina", R.drawable.ic_baseline_medication_24.toString(), state = true),
-            MedicineModel(name = "Ranitidina", R.drawable.ic_baseline_medication_24.toString(), state = false),
-            MedicineModel(name = "Dolex", R.drawable.ic_baseline_medication_24.toString(), state = true)
-        )
         MedicineList = listOf(
-            MedicineModel(name = "Acetaminofen", R.drawable.ic_baseline_medication_24.toString(), state = true),
-            MedicineModel(name = "Aspirina", R.drawable.ic_baseline_medication_24.toString(), state = true),
-            MedicineModel(name = "Loratadina", R.drawable.ic_baseline_medication_24.toString(), state = true),
-            MedicineModel(name = "Ranitidina", R.drawable.ic_baseline_medication_24.toString(), state = false),
-            MedicineModel(name = "Dolex", R.drawable.ic_baseline_medication_24.toString(), state = true)
-
+            MedicineModel(title = "Acetaminofen",R.drawable.img_aceta.toString(), state = "Medicamento Vigente"),
+            MedicineModel(title = "Aspirina",R.drawable.img_aspirina.toString(), state = "Medicamento NO Vigente"),
+            MedicineModel(title = "Loratadina",R.drawable.img_lorata.toString(), state = "Medicamento Vigente"),
+            MedicineModel(title = "Ranitidina",R.drawable.img_ranitidina.toString(), state = "Medicamento Vigente"),
+            MedicineModel(title = "Dolex",R.drawable.img_dolex.toString(), state = "Medicamento NO Vigente"),
+            MedicineModel(title = "Acetaminofen",R.drawable.img_aceta.toString(), state = "Medicamento Vigente"),
+            MedicineModel(title = "Dolex",R.drawable.img_dolex.toString(), state = "Medicamento NO Vigente")
         )
-        if (args.search){
-            binding.medicamentoFragmentSearch.visibility = View.VISIBLE
-            binding.medicamentoFragmentTitleList.visibility = View.GONE
-        }else{
-            binding.medicamentoFragmentSearch.visibility = View.GONE
-            binding.medicamentoFragmentTitleList.visibility = View.VISIBLE
-            MedicineList = originalList.filter { x -> x.name == args.name }
+        OriginalMedicineList = listOf(
+            MedicineModel(title = "Acetaminofen",R.drawable.img_aceta.toString(), state = "Medicamento Vigente"),
+            MedicineModel(title = "Aspirina",R.drawable.img_aspirina.toString(), state = "Medicamento NO Vigente"),
+            MedicineModel(title = "Loratadina",R.drawable.img_lorata.toString(), state = "Medicamento Vigente"),
+            MedicineModel(title = "Ranitidina",R.drawable.img_ranitidina.toString(), state = "Medicamento Vigente"),
+            MedicineModel(title = "Dolex",R.drawable.img_dolex.toString(), state = "Medicamento NO Vigente"),
+            MedicineModel(title = "Acetaminofen",R.drawable.img_aceta.toString(), state = "Medicamento Vigente"),
+            MedicineModel(title = "Dolex",R.drawable.img_dolex.toString(), state = "Medicamento NO Vigente")
+        )
 
-    }
-        MedicineAdapter = MedicineAdapter(MedicineList)
-        MedicineAdapter.listener = object : OnMedicineClickListener {
-            override fun onClick(item: MedicineModel) {
-                //Log.d(tag: "HOLA" item.name)
-            }
+        medicineAdapter = MedicineAdapter(MedicineList)
 
-        }
         binding.medicamentoFragmentSearchAutocomplete.setAdapter(
-            ArrayAdapter(requireContext(), android.R.layout.simple_dropdown_item_1line,categories))
-        binding.medicamentoFragmentSearchAutocomplete.setOnItemClickListener{parent, view, position, id ->
-            val category = categories[position]
-            if (category != "Todos") {
+            ArrayAdapter(requireContext(),android.R.layout.simple_dropdown_item_1line,categories))
 
-                MedicineList = originalList.filter { x -> x.name == category }
-            }else {
-                MedicineList = originalList
-                MedicineAdapter.changeDataSet(MedicineList)
-            }
+        binding.medicamentoFragmentSearchAutocomplete.setOnItemClickListener { parent, view, position, l ->
+            var category = categories[position]
+            if (category !="Todos")
+                MedicineList = OriginalMedicineList.filter { x -> x.title == category}
+            else
+                MedicineList =OriginalMedicineList
+            medicineAdapter.changeDataSet(MedicineList)
         }
 
         binding.homeFragmentRecycler.apply {
+            adapter = medicineAdapter
             layoutManager = LinearLayoutManager(requireContext())
-            adapter = MedicineAdapter
         }
     }
+
 
 }

@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/medicamento_0_icon"
+        android:id="@+id/item_medicine_icon"
         android:layout_width="@dimen/service_icon_size"
         android:layout_height="@dimen/service_icon_size"
         app:layout_constraintTop_toTopOf="parent"
@@ -14,22 +14,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="@dimen/default_margin"
         android:layout_marginStart="@dimen/default_margin"
-        tools:srcCompat="@drawable/ic_baseline_medication_24" />
+        tools:srcCompat="@drawable/ic_baseline_medication_24"
+        />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/medicamento_0_tittle"
+        android:id="@+id/item_medicine_title"
         style="@style/listamedicamento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/default_margin"
         android:textColor="@color/app_white"
         android:textSize="@dimen/service_tittle_size"
-        app:layout_constraintStart_toEndOf="@+id/medicamento_0_icon"
-        app:layout_constraintTop_toTopOf="@+id/medicamento_0_icon"
+        app:layout_constraintStart_toEndOf="@+id/item_medicine_icon"
+        app:layout_constraintTop_toTopOf="@+id/item_medicine_icon"
         tools:text="Acetaminofén" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/medicamento_0_state"
+        android:id="@+id/item_medicine_state"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/default_margin"
@@ -37,8 +38,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         android:textColor="@color/app_white"
-        app:layout_constraintStart_toEndOf="@id/medicamento_0_icon"
-        app:layout_constraintTop_toBottomOf="@+id/medicamento_0_tittle"
+        app:layout_constraintStart_toEndOf="@id/item_medicine_icon"
+        app:layout_constraintTop_toBottomOf="@+id/item_medicine_title"
         tools:text="El medicamento no tiene orden de apoyo vigente" />
 
 
@@ -48,7 +49,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/default_margin"
-        app:layout_constraintTop_toBottomOf="@id/medicamento_0_icon"
+        app:layout_constraintTop_toBottomOf="@id/item_medicine_icon"
         android:background="@color/app_white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,30 +3,23 @@ package unicauca.edu.drogue_plus.ui.fragments
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import unicauca.edu.drogue_plus.databinding.Medicamento0Binding
+import unicauca.edu.drogue_plus.databinding.ItemMedicineBinding
 
-class MedicineAdapter (var list: List<MedicineModel>):
-    RecyclerView.Adapter<MedicineAdapter.ViewHolder>() {
 
-    class ViewHolder(val view: Medicamento0Binding): RecyclerView.ViewHolder(view.root)
+class MedicineAdapter (var list: List<MedicineModel>): RecyclerView.Adapter<MedicineAdapter.ViewHolder>() {
 
-    var listener: OnMedicineClickListener? = null
+    class ViewHolder(val view: ItemMedicineBinding):RecyclerView.ViewHolder(view.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return ViewHolder(Medicamento0Binding.inflate(inflater, parent, false))
+        return ViewHolder(ItemMedicineBinding.inflate(inflater, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = list[position]
-        holder.view.medicamento0Tittle.text = item.name
-        holder.view.medicamento0State.text = item.state.toString()
-        //holder.view.medicamento0Icon.setImageResource(item.image.toInt())
-        holder.view.root.setOnClickListener {
-            listener?.onClick(item)
-        }
-
-
+        holder.view.itemMedicineTitle.text =item.title
+        holder.view.itemMedicineState.text =item.state
+        holder.view.itemMedicineIcon.setImageResource(item.icon.toInt())
     }
 
     override fun getItemCount(): Int {
@@ -35,7 +28,6 @@ class MedicineAdapter (var list: List<MedicineModel>):
     fun changeDataSet(newList: List<MedicineModel>){
         this.list = newList
         notifyDataSetChanged()
-
     }
 
 

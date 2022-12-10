@@ -33,17 +33,6 @@ class HomeFragment : Fragment() {
         serviceAdapter = MedicineAdapter(
             mutableListOf()
         )
-
-        serviceAdapter.listener = object : OnMedicineClickListener {
-            override fun onClick(item: MedicineModel) {
-                val action = HomeFragmentDirections.actionHomeFragmentToMedicineFragment22()
-                action.search = false
-                action.name = item.name
-                findNavController().navigate(action)
-            }
-
-        }
-
     }
 
 
