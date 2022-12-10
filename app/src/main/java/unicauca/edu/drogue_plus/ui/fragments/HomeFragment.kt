@@ -35,6 +35,7 @@ class HomeFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        loginViewModel.currentUser()
         serviceAdapter = MedicineAdapter(
             mutableListOf()
         )
