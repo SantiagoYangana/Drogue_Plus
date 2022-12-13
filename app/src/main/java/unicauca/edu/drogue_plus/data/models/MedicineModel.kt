@@ -1,4 +1,4 @@
-package unicauca.edu.drogue_plus.ui.fragments
+package unicauca.edu.drogue_plus.data.models
 
 data class MedicineModel(
     val title: String,

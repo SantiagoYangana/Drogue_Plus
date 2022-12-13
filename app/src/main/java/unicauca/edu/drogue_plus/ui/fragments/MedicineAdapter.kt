@@ -3,6 +3,7 @@ package unicauca.edu.drogue_plus.ui.fragments
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import unicauca.edu.drogue_plus.data.models.MedicineModel
 import unicauca.edu.drogue_plus.databinding.ItemMedicineBinding
 
 
