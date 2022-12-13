@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import unicauca.edu.drogue_plus.data.models.MapModel
 import unicauca.edu.drogue_plus.data.models.MedicineModel
 import unicauca.edu.drogue_plus.data.repositories.MedicineRepository
 
@@ -15,6 +16,15 @@ class MedicineViewModel(private val repo:MedicineRepository): ViewModel(){
     fun getMedicines(category : String?){
         viewModelScope.launch {
             _medicines.postValue(repo.getMedicines(category))
+        }
+    }
+
+    private val _location : MutableLiveData<MapModel> = MutableLiveData()
+    val location : LiveData<MapModel> get() = _location
+
+    fun getLocation(){
+        viewModelScope.launch {
+            _location.postValue(repo.getLocation())
         }
     }
 }

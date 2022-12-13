@@ -1,6 +1,7 @@
 package unicauca.edu.drogue_plus.data.datasource
 
 import unicauca.edu.drogue_plus.R
+import unicauca.edu.drogue_plus.data.models.MapModel
 import unicauca.edu.drogue_plus.data.models.MedicineModel
 import unicauca.edu.drogue_plus.data.models.UserModel
 
@@ -30,5 +31,11 @@ class MemoryDataSource {
             return list.filter { c -> c.title == category}
         }
         return list
+    }
+
+    suspend fun getLocation():MapModel{
+        return MapModel(
+            "1", "DroguePlus", 2.4454181795496903, -76.61976473210028
+        )
     }
 }
