@@ -48,17 +48,19 @@ class RegisterFragment : Fragment() {
             Toast.makeText(context,municipio, Toast.LENGTH_SHORT).show()
 
             if(binding.registerPassword.text.toString().equals(binding.registerConfirmPassword)){
+                loginViewModel.register(
+                    binding.registerName.text.toString(),
+                    radioButton.text.toString(),
+                    binding.registerEmail.text.toString(),
+                    binding.registerPassword.text.toString(),
+                    municipio.toString()
+                )
+            }else{
                 binding.registerConfirmPasswordLayout.error = getString(R.string.password_confirm_error)
             }
 
 
-            loginViewModel.register(
-                binding.registerName.text.toString(),
-                radioButton.text.toString(),
-                binding.registerEmail.text.toString(),
-                binding.registerPassword.text.toString(),
-                municipio.toString()
-            )
+
         }
 
         observeViewModels()
