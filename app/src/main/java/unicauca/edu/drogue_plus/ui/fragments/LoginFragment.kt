@@ -2,11 +2,10 @@ package unicauca.edu.drogue_plus.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
@@ -17,7 +16,6 @@ import unicauca.edu.drogue_plus.databinding.FragmentLoginBinding
 import unicauca.edu.drogue_plus.isValidEmail
 import unicauca.edu.drogue_plus.isValidPassword
 import unicauca.edu.drogue_plus.ui.activities.HomeActivity
-import unicauca.edu.drogue_plus.ui.activities.LoginActivity
 
 class LoginFragment : Fragment() {
 
@@ -25,27 +23,17 @@ class LoginFragment : Fragment() {
     private val binding: FragmentLoginBinding get() = _binding!!
 
     private val loginViewModel: LoginViewModel by viewModel()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-
-
-
         // Inflate the layout for this fragment
         _binding = FragmentLoginBinding.inflate(inflater,container,false)
-
         return binding.root
     }
 
     override fun onStart() {
         super.onStart()
-
-        val activity: LoginActivity? = activity as LoginActivity?
-        val municipio: String? = activity?.getMunicipio()
-        Toast.makeText(context,municipio,Toast.LENGTH_SHORT).show()
 
         binding.fragmentLoginButton.setOnClickListener{
             if(!binding.loginEmail.text.toString().isValidEmail()){
@@ -61,7 +49,7 @@ class LoginFragment : Fragment() {
             }
 
             if(binding.loginEmail.text.toString().isValidEmail() && binding.loginPassword.text.toString().isValidPassword()){
-                loginViewModel.login(binding.loginEmail.text.toString(),binding.loginPassword.text.toString(),municipio.toString())
+                loginViewModel.login(binding.loginEmail.text.toString(),binding.loginPassword.text.toString())
 
             }
         }

@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
-
+    android:background="@color/colorPrimaryVariant"
     tools:context=".ui.fragments.ProfileFragment">
 
     <com.google.android.material.imageview.ShapeableImageView
@@ -55,16 +53,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_fragment_email" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/profile_fragment_municipio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/default_margin"
-        android:textAppearance="@style/Text.Droge"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_fragment_gender" />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/profile_fragment_logout"
         android:layout_width="wrap_content"
@@ -76,17 +64,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_baseline_logout_24" />
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/banner_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="84dp"
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

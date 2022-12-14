@@ -19,14 +19,9 @@ class LoginRepository(
     private val db: FirebaseFirestore,
     private val storage: FirebaseStorage)
 {
-    suspend fun login(email: String, password: String, municipio: String) {
+    suspend fun login(email: String, password: String) {
         try {
             authService.signInWithEmailAndPassword(email,password).await()
-            val user = authService.currentUser!!
-            val userInfo = hashMapOf(
-                "municipio" to municipio
-            )
-            db.collection(USER_COLLECTION).document(user.uid).update(userInfo as Map<String, Any>).await()
         }catch (e: FirebaseAuthException){
             throw Exception(e.message)
         }
@@ -44,12 +39,12 @@ class LoginRepository(
                 photo = user.photoUrl.toString()
             }
             val info = db.collection(USER_COLLECTION).document(user.uid).get().await()
-            return UserModel(user.uid,user.displayName!!,user.email!!,info.get("gender").toString(),photo,info.get("municipio").toString())
+            return UserModel(user.uid,user.displayName!!,user.email!!,info.get("gender").toString(),photo)
         }
         return null
     }
 
-    suspend fun register(name: String, gender: String, email: String, password: String,municipio:String){
+    suspend fun register(name: String, gender: String, email: String, password: String){
         try{
             authService.createUserWithEmailAndPassword(email,password).await()
             val user = authService.currentUser!!
@@ -58,8 +53,7 @@ class LoginRepository(
             }
             user.updateProfile(profileUpdate).await()
             val userInfo = hashMapOf(
-                "gender" to gender,
-                "municipio" to municipio
+                "gender" to gender
             )
             db.collection(USER_COLLECTION).document(user.uid).set(userInfo).await()
         }catch (e: FirebaseAuthException){

@@ -9,7 +9,6 @@
     android:gravity="center"
     android:orientation="vertical"
     android:textAlignment="center"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.activities.MainActivity">
 
     <ImageView
@@ -75,7 +74,5 @@
         android:text="Siguiente"
         android:textAlignment="center"
         android:textSize="@dimen/btn_text_size" />
-    
-
 
 </LinearLayout>
