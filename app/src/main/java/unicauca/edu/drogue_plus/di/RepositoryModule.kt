@@ -8,5 +8,5 @@ import unicauca.edu.drogue_plus.data.repositories.MedicineRepository
 val repoModule = module {
     single{ LoginRepository(get(),get(),get(),get())}
     single{ HomeRepository(get())}
-    single{MedicineRepository(get())}
+    single{MedicineRepository(get(),get(),get())}
 }

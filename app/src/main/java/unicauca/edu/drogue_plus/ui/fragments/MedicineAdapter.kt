@@ -3,6 +3,7 @@ package unicauca.edu.drogue_plus.ui.fragments
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import unicauca.edu.drogue_plus.data.models.MedicineModel
 import unicauca.edu.drogue_plus.databinding.ItemMedicineBinding
 
@@ -20,7 +21,8 @@ class MedicineAdapter (var list: List<MedicineModel>): RecyclerView.Adapter<Medi
         val item = list[position]
         holder.view.itemMedicineTitle.text =item.title
         holder.view.itemMedicineState.text =item.state
-        holder.view.itemMedicineIcon.setImageResource(item.icon.toInt())
+//        holder.view.itemMedicineIcon.setImageResource(item.icon.toInt())
+        Glide.with(holder.view.root).load(item.icon).centerCrop().into(holder.view.itemMedicineIcon)
     }
 
     override fun getItemCount(): Int {
