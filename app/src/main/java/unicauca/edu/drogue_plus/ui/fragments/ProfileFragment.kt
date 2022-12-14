@@ -1,5 +1,6 @@
 package unicauca.edu.drogue_plus.ui.fragments
 
+import android.annotation.SuppressLint
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -12,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
+import com.google.android.gms.ads.AdRequest
 import com.google.android.material.snackbar.Snackbar
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import unicauca.edu.drogue_plus.CAMERA_PERMISSION
@@ -36,7 +38,14 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
+        initLoadsAds()
         return binding.root
+    }
+
+    @SuppressLint("MissingPermission")
+    private fun initLoadsAds(){
+        val adRequest = AdRequest.Builder().build()
+        binding.bannerProfile.loadAd(adRequest)
     }
 
     override fun onStart() {
@@ -93,6 +102,7 @@ class ProfileFragment : Fragment() {
                 binding.profileFragmentName.text = it.nombre
                 binding.profileFragmentEmail.text = it.email
                 binding.profileFragmentGender.text = it.genero
+                binding.profileFragmentMunicipio.text = it.municpio
                 if (it.image != null) {
                     Glide.with(binding.root).load(it.image).centerCrop()
                         .into(binding.profileFragmentImage)

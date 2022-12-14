@@ -1,27 +1,40 @@
 package unicauca.edu.drogue_plus.ui.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import unicauca.edu.drogue_plus.R
+import androidx.appcompat.app.AppCompatActivity
 import unicauca.edu.drogue_plus.databinding.ActivityLoginBinding
+import unicauca.edu.drogue_plus.ui.fragments.LoginFragment
 
 class LoginActivity : AppCompatActivity() {
 
+    private var municipio: String? = "Popayan"
+
     private lateinit var binding: ActivityLoginBinding
 
-    lateinit var msj : TextView
+
+    lateinit var datos : Bundle
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
+        super.onCreate(savedInstanceState)
+        datos = intent.extras!!
+        municipio = datos.getString("departamento").toString()
         binding = ActivityLoginBinding.inflate(layoutInflater)
+
+        val bundle =  Bundle()
+        bundle.putString("departamento", municipio)
+
+        val fragmentManager = supportFragmentManager
+
         setContentView(binding.root)
     }
 
     override fun onStart(){
         super.onStart()
+    }
+
+    fun getMunicipio(): String? {
+        return this.municipio
     }
 }

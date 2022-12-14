@@ -37,6 +37,7 @@
                 android:layout_gravity="center_horizontal"
                 app:defaultNavHost="true"
                 app:navGraph="@navigation/login_nav" />
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

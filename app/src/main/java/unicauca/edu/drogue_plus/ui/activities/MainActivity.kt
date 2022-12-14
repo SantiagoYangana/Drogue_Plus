@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
 
     override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int,id:Long) {
         item = parent?.getItemAtPosition(position).toString()
-        Toast.makeText(this@MainActivity,item,Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this@MainActivity,item,Toast.LENGTH_SHORT).show()
 
         val btnGoLogin : Button = findViewById(R.id.btnGoLogin)
         val miIntent = Intent(this, LoginActivity::class.java)
