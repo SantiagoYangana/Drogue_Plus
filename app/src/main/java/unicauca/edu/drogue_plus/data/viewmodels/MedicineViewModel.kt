@@ -22,9 +22,9 @@ class MedicineViewModel(private val repo:MedicineRepository): ViewModel(){
     private val _location : MutableLiveData<MapModel> = MutableLiveData()
     val location : LiveData<MapModel> get() = _location
 
-    fun getLocation(){
+    fun getLocation(municipio: String) {
         viewModelScope.launch {
-            _location.postValue(repo.getLocation())
+            _location.postValue(repo.getLocation(municipio))
         }
     }
 }

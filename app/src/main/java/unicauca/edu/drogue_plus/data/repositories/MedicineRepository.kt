@@ -27,8 +27,7 @@ class MedicineRepository(private val memoryDataSource :MemoryDataSource ,
         }
     }
 
-    suspend fun getLocation(): MapModel {
-        val mapa :MapModel
-        return memoryDataSource.getLocation()
+    suspend fun getLocation(municipio: String): MapModel {
+        return memoryDataSource.getLocation(municipio)
     }
 }

@@ -13,9 +13,5 @@ class HomeViewModel(private val repo:HomeRepository): ViewModel() {
     private val _location : MutableLiveData<MapModel> = MutableLiveData()
     val location : LiveData<MapModel> get() = _location
 
-    fun getLocation(){
-        viewModelScope.launch {
-            _location.postValue(repo.getLocation())
-        }
-    }
+
 }

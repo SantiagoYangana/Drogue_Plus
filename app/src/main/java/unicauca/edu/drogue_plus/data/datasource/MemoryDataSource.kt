@@ -13,7 +13,8 @@ class MemoryDataSource {
             "Pepito",
             "Perez",
             "pep@gmail.com",
-            "https://memes.co.in/memes/update/uploads/2021/12/InShot_20211209_222013681-768x768.jpg"
+            "https://memes.co.in/memes/update/uploads/2021/12/InShot_20211209_222013681-768x768.jpg",
+            "Cauca"
         )
     }
     suspend fun getMedicines(category : String?): List<MedicineModel>{
@@ -33,9 +34,25 @@ class MemoryDataSource {
         return list
     }
 
-    suspend fun getLocation():MapModel{
+    suspend fun getLocation(municipio: String):MapModel{
+        var lat : Double = 0.0
+        var lon : Double = 0.0
+
+        if(municipio.equals("Cauca")){
+            lat = 2.4454181795496903
+            lon = -76.61976473210028
+        }
+        if(municipio.equals("Valle del Cauca")){
+
+            lat = 3.4516388094252033
+            lon = -76.52853606523732
+        }
+        if(municipio.equals("Nariño")){
+            lat = 1.2132999703471379
+            lon = -77.28022207166575
+        }
         return MapModel(
-            "1", "DroguePlus", 2.4454181795496903, -76.61976473210028
+            "1", "DroguePlus", lat,lon
         )
     }
 }
