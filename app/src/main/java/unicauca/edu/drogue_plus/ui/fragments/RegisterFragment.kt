@@ -14,6 +14,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import unicauca.edu.drogue_plus.R
 import unicauca.edu.drogue_plus.data.viewmodels.LoginViewModel
 import unicauca.edu.drogue_plus.databinding.FragmentRegisterBinding
+import unicauca.edu.drogue_plus.isValidPassword
 import unicauca.edu.drogue_plus.ui.activities.LoginActivity
 
 class RegisterFragment : Fragment() {
@@ -27,9 +28,6 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-
-
-
         _binding = FragmentRegisterBinding.inflate(inflater,container,false)
         return binding.root
     }
@@ -48,6 +46,11 @@ class RegisterFragment : Fragment() {
             val activity: LoginActivity? = activity as LoginActivity?
             val municipio: String? = activity?.getMunicipio()
             Toast.makeText(context,municipio, Toast.LENGTH_SHORT).show()
+
+            if(binding.registerPassword.text.toString().equals(binding.registerConfirmPassword)){
+                binding.registerConfirmPasswordLayout.error = getString(R.string.password_confirm_error)
+            }
+
 
             loginViewModel.register(
                 binding.registerName.text.toString(),

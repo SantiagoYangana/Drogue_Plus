@@ -50,6 +50,7 @@
     <string name="registro_lbl">Registro Usuario</string>
     <string name="email_error">Correo electrónico no válido</string>
     <string name="password_error">Contraseña invalida</string>
+    <string name="password_confirm_error">Las contraseñas no coinciden</string>
     <string name="register_lbl1">Ya tengo una cuenta</string>
     <string name="register_lbl2">Iniciar sesión</string>
     <string name="name_hint">Nombre</string>
