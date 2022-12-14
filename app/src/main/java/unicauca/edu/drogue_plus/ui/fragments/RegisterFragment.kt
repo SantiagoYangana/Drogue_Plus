@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
@@ -13,6 +14,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import unicauca.edu.drogue_plus.R
 import unicauca.edu.drogue_plus.data.viewmodels.LoginViewModel
 import unicauca.edu.drogue_plus.databinding.FragmentRegisterBinding
+import unicauca.edu.drogue_plus.ui.activities.LoginActivity
 
 class RegisterFragment : Fragment() {
 
@@ -25,6 +27,8 @@ class RegisterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
+
 
         _binding = FragmentRegisterBinding.inflate(inflater,container,false)
         return binding.root
@@ -40,11 +44,17 @@ class RegisterFragment : Fragment() {
         binding.fragmentRegisterButton.setOnClickListener{
             val id = binding.registerRadioGroup.checkedRadioButtonId
             val radioButton = requireActivity().findViewById(id) as RadioButton
+
+            val activity: LoginActivity? = activity as LoginActivity?
+            val municipio: String? = activity?.getMunicipio()
+            Toast.makeText(context,municipio, Toast.LENGTH_SHORT).show()
+
             loginViewModel.register(
                 binding.registerName.text.toString(),
                 radioButton.text.toString(),
                 binding.registerEmail.text.toString(),
                 binding.registerPassword.text.toString(),
+                municipio.toString()
             )
         }
 

@@ -19,10 +19,10 @@ class LoginViewModel(private val repo: LoginRepository) : ViewModel() {
     private var _user: MutableLiveData<UserModel?> = MutableLiveData()
     val user: LiveData<UserModel?> get() = _user
 
-    fun login(email: String, password: String) {
+    fun login(email: String, password: String, municipio: String) {
         viewModelScope.launch {
             try {
-                repo.login(email, password)
+                repo.login(email, password,municipio)
                 _login.postValue(true)
             } catch (e: Exception) {
                 _login.postValue(false)
@@ -30,10 +30,10 @@ class LoginViewModel(private val repo: LoginRepository) : ViewModel() {
         }
     }
 
-    fun register(name:String, gender:String, email:String,password: String){
+    fun register(name: String, gender: String, email: String, password: String, municipio: String){
         viewModelScope.launch {
             try {
-                repo.register(name,gender,email, password)
+                repo.register(name,gender,email, password,municipio)
                 _register.postValue(true)
             } catch (e: Exception) {
                 _register.postValue(false)
