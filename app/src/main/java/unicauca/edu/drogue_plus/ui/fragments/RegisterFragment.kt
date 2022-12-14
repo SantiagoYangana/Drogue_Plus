@@ -45,9 +45,9 @@ class RegisterFragment : Fragment() {
 
             val activity: LoginActivity? = activity as LoginActivity?
             val municipio: String? = activity?.getMunicipio()
-            Toast.makeText(context,municipio, Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context,municipio, Toast.LENGTH_SHORT).show()
 
-            if(binding.registerPassword.text.toString().equals(binding.registerConfirmPassword)){
+            if(binding.registerPassword.text.toString().equals(binding.registerConfirmPassword.text.toString())){
                 loginViewModel.register(
                     binding.registerName.text.toString(),
                     radioButton.text.toString(),
@@ -57,6 +57,7 @@ class RegisterFragment : Fragment() {
                 )
             }else{
                 binding.registerConfirmPasswordLayout.error = getString(R.string.password_confirm_error)
+                binding.registerPasswordLayout.error = getString(R.string.password_confirm_error)
             }
 
 
